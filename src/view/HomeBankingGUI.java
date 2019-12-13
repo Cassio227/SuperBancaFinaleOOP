@@ -2,6 +2,7 @@ package view;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.util.Scanner;
 
@@ -18,6 +19,8 @@ public class HomeBankingGUI extends JFrame {
 	private JButton  confirmLogin;
 	private JTextField textFieldUsr;
 	private JTextField textFieldPwd;
+	private JLabel saldoAttuale;
+	private JLabel saldoAttualeLabel;
 	private JTextField textFieldImporto;
 	private JButton  confirmVersa;
 	private JButton  confirmPreleva;
@@ -79,9 +82,15 @@ public class HomeBankingGUI extends JFrame {
 		
 		confirmPreleva =  new JButton("Preleva");
 		confirmVersa =  new JButton("Versa");
+		saldoAttualeLabel =  new JLabel("Il saldo corrente ammonta a ");
+		saldoAttualeLabel.setFont(new Font("serif", Font.PLAIN, 25));
+		saldoAttuale = new JLabel("0");
+		saldoAttuale.setFont(new Font("serif", Font.PLAIN, 45));
+		saldoAttuale.setHorizontalAlignment(JLabel.RIGHT);
 		
-		
-		pannelloLogged.setLayout(new GridLayout(3,1,20,20));
+		pannelloLogged.setLayout(new GridLayout(5,1,20,20));
+		pannelloLogged.add(saldoAttualeLabel);
+		pannelloLogged.add(saldoAttuale);				
 		pannelloLogged.add(textFieldImporto);
 		pannelloLogged.add(confirmPreleva);
 		pannelloLogged.add(confirmVersa);  
